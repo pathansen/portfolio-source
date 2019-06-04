@@ -2,3 +2,12 @@
     padding-top: 5%;
     padding-bottom: 0%;
 }
+
+.socialLink {
+    color: white;
+    text-decoration: none;
+}
+
+.socialLink:hover {
+    color: rgb(84, 194, 245);
+}
