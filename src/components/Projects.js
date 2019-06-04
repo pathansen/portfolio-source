@@ -15,21 +15,17 @@ class Projects extends React.Component {
         'projectName': 'Portfolio Website',
         'projectLanguage': 'ReactJS',
         'projectRepoLink': 'https://github.com/pathansen/portfolio-source',
-        'thumbnail': ''
+        'thumbnail': '/assets/code.png'
       },
       {
         'projectName': 'Project 2',
         'projectLanguage': 'ReactJS',
         'projectRepoLink': 'https://github.com/pathansen/portfolio-source',
-        'thumbnail': ''
+        'thumbnail': '/assets/code.png'
       }
     ];
 
     this.setState({ data: data });
-  }
-
-  componentDidMount = () => {
-    document.title = 'Patrick Hansen';
   }
 
   render() {
@@ -38,6 +34,7 @@ class Projects extends React.Component {
 
     return (
       <div className={classes.projectHeader}>
+        <hr style={{width:"90%", borderColor:"rgb(84, 194, 245)"}} />
         <h1>Projects</h1>
 
         <div className="responsive-grid" style={{width:"95%", paddingLeft:"1%"}}>
@@ -49,7 +46,8 @@ class Projects extends React.Component {
                   <Project
                     projectName={project.projectName}
                     projectLanguage={project.projectLanguage}
-                    projectRepoLink={project.projectRepoLink} />
+                    projectRepoLink={project.projectRepoLink}
+                    thumbnail={project.thumbnail} />
                 </div>
               )
             })}

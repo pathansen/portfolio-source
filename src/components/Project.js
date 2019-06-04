@@ -16,7 +16,7 @@ class Project extends React.Component {
 
   render() {
 
-    const { projectName, projectLanguage, projectRepoLink} = this.props;
+    const { projectName, projectLanguage, projectRepoLink, thumbnail} = this.props;
     const { displayModal } = this.state;
 
     return (
@@ -30,14 +30,20 @@ class Project extends React.Component {
             projectRepoLink={projectRepoLink} />
         }
 
-        <div className={classes.projectItem} onClick={this.toggleModalHandler}>
+        <div
+          style={{backgroundImage:`url(${process.env.PUBLIC_URL + thumbnail})`}}
+          className={classes.projectItem}
+          onClick={this.toggleModalHandler}
+        >
           <div className={classes.titleCard}>
             <h4 style={{margin:"0"}}>{projectName}</h4>
             <h6 style={{margin:"0", fontWeight:"normal"}}>({projectLanguage})</h6>
           </div>
             <a className={classes.repositoryLink} href={projectRepoLink}>
               <div href={projectRepoLink}>
-                <h6 style={{margin:"0", fontWeight:"normal"}}>GitHub Repository</h6>
+                <h6 style={{margin:"0", fontWeight:"normal"}}>
+                  <i class="fa fa-github"></i> GitHub Repository
+                </h6>
               </div>
             </a>
         </div>

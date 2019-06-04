@@ -26,7 +26,7 @@ class ProjectModal extends React.Component {
 
   render() {
 
-    const { projectName } = this.props;
+    const { projectName, projectLanguage, projectRepoLink } = this.props;
 
     return (
       <div
@@ -38,7 +38,33 @@ class ProjectModal extends React.Component {
           <div onClick={this.handleClosePress} className={classes.close}>
             <p className={classes.closeText}>&times;</p>
           </div>
-          <p>{projectName}</p>
+          <div className={classes.projectTitle}>
+            <h1 className={classes.projectTitle}>{projectName}</h1>
+            <h5 style={{fontWeight:"normal", margin:"0", marginBottom:"0.5%"}}>Written in <b>{projectLanguage}</b></h5>
+            <a className={classes.repoLinkStyle} href={projectRepoLink}>
+              <h5 style={{fontWeight:"normal", margin:"0"}}><i class="fa fa-github"></i> Link to Code on GitHub</h5>
+            </a>
+          </div>
+
+          <hr style={{width:"90%"}} />
+
+          <div className={classes.projectDescription}>
+            <p>Description here...</p>
+          </div>
+
+          <hr style={{width:"90%"}} />
+
+          <div className={classes.projectFigures}>
+            <p>Figures here...</p>
+            <figure>
+              <img
+                src={process.env.PUBLIC_URL + '/assets/code.png'}
+                alt="Something Went Wrong"
+                style={{width:"80%"}} />
+              <figcaption>Filler text...</figcaption>
+            </figure>
+          </div>
+
         </div>
 
       </div>

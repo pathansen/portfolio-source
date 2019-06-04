@@ -26,6 +26,8 @@
     color: black;
     width: 80%;
     height: 75%;
+    overflow-y: auto;
+    font-family: "Titillium Web";
 }
 
 .close {
@@ -48,4 +50,33 @@
     margin: 0;
     padding-right: 2%;
     padding-top: 1%;
+}
+
+.projectTitle {
+    width: 90%;
+    margin: auto;
+}
+
+.projectDescription {
+    width: 90%;
+    margin: auto;
+    text-align: left;
+}
+
+.projectFigures {
+    width: 90%;
+    margin: auto;
+}
+
+.projectNameStyle {
+    margin-bottom: 0;
+}
+
+.repoLinkStyle {
+    color: black;
+    text-decoration: none;
+}
+
+.repoLinkStyle:hover {
+    color: rgb(84, 194, 245);
 }
