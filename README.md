@@ -1,3 +1,20 @@
+# Portfolio Website
+
+This project was created to showcase different projects I have worked on as well as development using React. The portfolio web page was built using ReactJS with different pieces of the web page, such as the projects and modal for each project, being built as components that display the data corresponding to the project they represent. In addition, the source code of this project, as well as the others listed, can be viewed on GitHub.
+
+This project can be found in two different repositories: this repository contains the source code and another containing the production build of the code to be served to this URL using GitHub pages.
+
+
+### Deployed at: https://pathansen.github.io/
+
+Source Code Repository: https://github.com/pathansen/portfolio-source
+
+Production Code Repository: https://github.com/pathansen/pathansen.github.io
+
+
+---
+# README File Created by React
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
