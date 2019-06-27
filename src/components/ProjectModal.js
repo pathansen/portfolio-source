@@ -26,7 +26,14 @@ class ProjectModal extends React.Component {
 
   render() {
 
-    const { projectName, projectLanguage, projectRepoLink } = this.props;
+    const {
+      projectName,
+      projectLanguage,
+      projectRepoLink,
+      projectDescription,
+      figures,
+      captions
+    } = this.props;
 
     return (
       <div
@@ -40,29 +47,43 @@ class ProjectModal extends React.Component {
           </div>
           <div className={classes.projectTitle}>
             <h1 className={classes.projectTitle}>{projectName}</h1>
-            <h5 style={{fontWeight:"normal", margin:"0", marginBottom:"0.5%"}}>Written in <b>{projectLanguage}</b></h5>
-            <a className={classes.repoLinkStyle} href={projectRepoLink}>
-              <h5 style={{fontWeight:"normal", margin:"0"}}><i class="fa fa-github"></i> Link to Code on GitHub</h5>
-            </a>
+
+            <h5 style={{fontWeight:"normal", margin:"0"}}>
+              <span>
+                Written in <b>{projectLanguage}</b>
+              </span>
+              <span>
+                &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+              </span>
+              <span>
+                <a target="_blank" rel="noreferrer noopener" className={classes.repoLinkStyle} href={projectRepoLink}>
+                  <i className="fab fa-github"></i> Link to Code on GitHub
+                </a>
+              </span>
+            </h5>
+
+
           </div>
 
-          <hr style={{width:"90%"}} />
 
           <div className={classes.projectDescription}>
-            <p>Description here...</p>
+            <hr />
+            {projectDescription.map((description, index) => <p key={index}>{description}</p> )}
+            <hr />
           </div>
 
-          <hr style={{width:"90%"}} />
-
           <div className={classes.projectFigures}>
-            <p>Figures here...</p>
-            <figure>
-              <img
-                src={process.env.PUBLIC_URL + '/assets/code.png'}
-                alt="Something Went Wrong"
-                style={{width:"80%"}} />
-              <figcaption>Filler text...</figcaption>
-            </figure>
+            {figures.map((figure, index) => {
+              return (
+                <figure key={index}>
+                  <img
+                    src={process.env.PUBLIC_URL + figure}
+                    alt="Something Went Wrong..."
+                    className={classes.figure} />
+                  <figcaption>Fig. {index + 1}. {captions[index]}</figcaption>
+                </figure>
+              )
+            })}
           </div>
 
         </div>
