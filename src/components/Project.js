@@ -10,14 +10,32 @@ class Project extends React.Component {
   }
 
   toggleModalHandler = () => {
-    const updateDisplayModal = !this.state.displayModal;
-    this.setState({ displayModal: updateDisplayModal });
+    const { displayModal } = this.state;
+    document.body.style.overflow = displayModal ? 'auto' : 'hidden';
+    this.setState({ displayModal: !displayModal });
   }
 
   render() {
 
-    const { projectName, projectLanguage, projectRepoLink, thumbnail} = this.props;
+    const {
+      projectName,
+      projectLanguage,
+      projectRepoLink,
+      projectDescription,
+      thumbnail,
+      figures,
+      captions
+    } = this.props;
     const { displayModal } = this.state;
+
+    const iconCode = (projectLanguage === 'ReactJS') ? 'fab fa-react' :
+                     (projectLanguage === 'Angular') ? 'fab fa-angular' :
+                     (projectLanguage === 'Python') ? 'fab fa-python' :
+                     (projectLanguage === 'Verilog') ? 'fas fa-microchip' :
+                     (projectLanguage === 'JavaScript') ? 'fab fa-js' :
+                     (projectLanguage === 'Swift (iOS)') ? 'fab fa-apple' :
+                     (projectLanguage === 'Java (Android)') ? 'fab fa-android' :
+                     (projectLanguage === 'Java') ? 'fab fa-java' : 'fas fa-code';
 
     return (
       <div>
@@ -27,26 +45,33 @@ class Project extends React.Component {
             toggleModal={this.toggleModalHandler}
             projectName={projectName}
             projectLanguage={projectLanguage}
-            projectRepoLink={projectRepoLink} />
+            projectRepoLink={projectRepoLink}
+            projectDescription={projectDescription}
+            figures={figures}
+            captions={captions} />
         }
 
-        <div
-          style={{backgroundImage:`url(${process.env.PUBLIC_URL + thumbnail})`}}
-          className={classes.projectItem}
-          onClick={this.toggleModalHandler}
-        >
-          <div className={classes.titleCard}>
-            <h4 style={{margin:"0"}}>{projectName}</h4>
-            <h6 style={{margin:"0", fontWeight:"normal"}}>({projectLanguage})</h6>
+        {projectName !== 'placeholder' &&
+          <div
+            style={{backgroundImage:`url(${process.env.PUBLIC_URL + thumbnail})`}}
+            className={classes.projectItem}
+          >
+            <div className={classes.titleCard} onClick={this.toggleModalHandler}>
+              <h4 style={{margin:"0"}}>{projectName}</h4>
+              <h6 style={{margin:"0", fontWeight:"normal"}}>
+              <i className={iconCode}></i> &nbsp;{projectLanguage}
+              </h6>
+            </div>
+              <a target="_blank" rel="noreferrer noopener" className={classes.repositoryLink} href={projectRepoLink}>
+                <div href={projectRepoLink}>
+                  <h6 style={{margin:"0", fontWeight:"normal"}}>
+                    <i className="fab fa-github"></i> GitHub Repository
+                  </h6>
+                </div>
+              </a>
           </div>
-            <a className={classes.repositoryLink} href={projectRepoLink}>
-              <div href={projectRepoLink}>
-                <h6 style={{margin:"0", fontWeight:"normal"}}>
-                  <i class="fa fa-github"></i> GitHub Repository
-                </h6>
-              </div>
-            </a>
-        </div>
+        }
+
       </div>
     )
   }
