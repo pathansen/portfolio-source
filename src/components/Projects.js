@@ -1,7 +1,9 @@
 import React from 'react';
 
-import Project from './Project'
-import classes from './Projects.module.css'
+import projects from './projects.json';
+
+import Project from './Project';
+import classes from './Projects.module.css';
 
 class Projects extends React.Component {
 
@@ -9,22 +11,8 @@ class Projects extends React.Component {
     data: []
   }
 
-  componentWillMount = () => {
-    const data = [
-      {
-        'projectName': 'Portfolio Website',
-        'projectLanguage': 'ReactJS',
-        'projectRepoLink': 'https://github.com/pathansen/portfolio-source',
-        'thumbnail': '/assets/code.png'
-      },
-      {
-        'projectName': 'Project 2',
-        'projectLanguage': 'ReactJS',
-        'projectRepoLink': 'https://github.com/pathansen/portfolio-source',
-        'thumbnail': '/assets/code.png'
-      }
-    ];
-
+  componentDidMount = () => {
+    const data = projects.data;
     this.setState({ data: data });
   }
 
@@ -32,22 +20,29 @@ class Projects extends React.Component {
 
     const { data } = this.state;
 
+    if (data.length % 3 === 2) {
+      data.push({'projectName': 'placeholder'});
+    }
+
     return (
       <div className={classes.projectHeader}>
         <hr style={{width:"90%", borderColor:"rgb(84, 194, 245)"}} />
-        <h1>Projects</h1>
+        <h2>Projects</h2>
 
-        <div className="responsive-grid" style={{width:"95%", paddingLeft:"1%"}}>
+        <div className="responsiveGrid" style={{width:"95%", paddingLeft:"1%"}}>
           <div className="row" id={classes.projectRow}>
 
-            {data.map(project => {
+            {data.map((project, index) => {
               return (
-                <div className="column" id={classes.projectColumn}>
+                <div key={index} className="column" id={classes.projectColumn}>
                   <Project
                     projectName={project.projectName}
                     projectLanguage={project.projectLanguage}
                     projectRepoLink={project.projectRepoLink}
-                    thumbnail={project.thumbnail} />
+                    projectDescription={project.projectDescription}
+                    thumbnail={project.thumbnail}
+                    figures={project.figures}
+                    captions={project.captions} />
                 </div>
               )
             })}

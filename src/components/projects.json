@@ -1,0 +1,97 @@
+{
+  "data": [
+    {
+      "projectName": "Portfolio Website",
+      "projectLanguage": "ReactJS",
+      "projectRepoLink": "https://github.com/pathansen/portfolio-source",
+      "thumbnail": "/assets/portfolio/code.png",
+      "projectDescription": [
+        "This project is the web page you are currently looking at and was created to showcase different projects I have worked on as well as development using React. This web page was built using ReactJS with different pieces of the web page, such as the projects and modal for each project, being built as components that display the data corresponding to the project they represent. In addition, the source code of this project, as well as the others listed, can be viewed on GitHub.",
+        "This project can be found in two different repositories: the one linked to this project contains the source code and another containing the production build of the code to be served to this URL using GitHub pages."
+      ],
+      "figures": [
+        "/assets/portfolio/portfolio_site.png",
+        "/assets/portfolio/react_code.png"
+      ],
+      "captions": [
+        "View of Web Page",
+        "React Component Defining Projects Section"
+      ]
+    },
+    {
+      "projectName": "Machine Learning Algorithms",
+      "projectLanguage": "Python",
+      "projectRepoLink": "https://github.com/pathansen/machine-learning-algorithms",
+      "thumbnail": "/assets/ml/machine_learning.png",
+      "projectDescription": [
+        "This repository contains code for various machine learning algorithms implemented in both Python and TensorFlow (using eager execution). The Python implementation demonstrates how the different machine learning algorithms function through both showing the models fit to the data through updating the parameters via gradient descent and how the model can be used to make predictions.",
+        "Complimentary, the TensorFlow models show how the same algorithms can be implemented using TensorFlow eager API. In comparison to the Python implementations, the interface to the models are the same but TensorFlow handles updating the parameters of the model so explicit code to update each parameter is not needed.",
+        "Implemented machine learning algorithms include Linear Regression, Logistic Regression, Polynomial Regression, Perceptron, and Fully Connected Neural Network."
+      ],
+      "figures": [
+        "/assets/ml/linear_regression.png",
+        "/assets/ml/polynomial_regression.png",
+        "/assets/ml/logistic_regression.png",
+        "/assets/ml/perceptron.png"
+      ],
+      "captions": [
+        "Linear Regression",
+        "Polynomial Regression",
+        "Logistic Regression",
+        "Perceptron"
+      ]
+    },
+    {
+      "projectName": "Basic Graphics Processing Unit",
+      "projectLanguage": "Verilog",
+      "projectRepoLink": "https://github.com/hansenp2/hardware_graphics_engine",
+      "thumbnail": "/assets/gpu/gpu.png",
+      "projectDescription": [
+        "This project was done as an Electrical and Computer Engineering Senior Design Project at The College of New Jersey (TCNJ) during the 2018 - 2019 academic year.",
+        "Graphics processing units (GPU) are necessary for any device with a display including personal computers, smartphones, and embedded systems. The graphic engine of a device is hardware that generates and sends video data to a display. This project includes the design and implementation of a graphic engine on a field programmable gate array (FPGA) to drive a display via the video graphics array (VGA) interface. Additionally, a host device was programmed on a programmable system on chip (PSoC) to communicate with the hardware engine and send drawing commands to the display. The system’s functions includes receiving and processing commands from an outside host via the I2C communication protocol, providing a display memory for a 640 (horizontal) by 480 (vertical) pixel display resolution, writing pixel data into display memory based on received commands, and transmitting the pixel data to a monitor via VGA protocol. The hardware design is represented using the Verilog hardware description language, and design verification procedures will be defined based on both Verilog simulation, and the configured FPGA board environment."
+      ],
+      "figures": [
+        "assets/gpu/block_diagram.png",
+        "assets/gpu/schematic.png"
+      ],
+      "captions": [
+        "Block Diagram of System",
+        "Vivado Generated Schematic"
+      ]
+    },
+    {
+      "projectName": "Wikipedia Search Chrome Extension",
+      "projectLanguage": "JavaScript",
+      "projectRepoLink": "https://github.com/pathansen/wikipedia-search-chrome-extension",
+      "thumbnail": "/assets/wiki_extension/wiki.png",
+      "projectDescription": [
+        "This is a Google Chrome Extension that allows for Wikipedia searches to be made instantly from within the browser. A user is able to make a search and have a list of results appear and clicking on a result will open the Wikipedia page in a new tab within the browser.",
+        "This extension is currently not published to the Chrome Web Store so it needs to be installed manually (instructions are in the README of the GitHub repository)."
+      ],
+      "figures": [
+        "/assets/wiki_extension/in_use.png"
+      ],
+      "captions": [
+        "Extension being used within the Browser"
+      ]
+    },
+    {
+      "projectName": "Video True Motion Detection",
+      "projectLanguage": "Python",
+      "projectRepoLink": "https://github.com/pathansen/video-motion-detection",
+      "thumbnail": "/assets/motion_detection/motion.png",
+      "projectDescription": [
+        "True motion can be detected in video using Phase Correlation between subsequent frames. Motion detected using Phase Correlation differs from motion estimation used in video compression techniques because Phase Correlation detects true motion while motion estimation techniques are used to compress data (i.e., the estimated motion may not correlate to motion in the video sequence).",
+        "Phase Correlation functions under the notion that motion between images can be defined as a spatial shift of the pixels between images (to be mathematically correct, it is a circular shift of pixels). If one image can be defined as a shifted version of the other image, then the 2D Fourier Transform of one of the images can be defined in terms of the other multiplied by a complex exponential in the frequency domain to denote the shift in the spatial domain. After defining the 2D Fourier Transform of one image in terms of the other image, the Normalized Cross-Power Spectrum can be computed which will yield only the complex exponential in the frequency domain or the vertical and horizontal change between the images in the spatial domain."
+      ],
+      "figures": [
+        "/assets/motion_detection/simple_example.png",
+        "/assets/motion_detection/out.gif"
+      ],
+      "captions": [
+        "Phase Correlation Output between Two Simple Synthetic Images",
+        "Motion Detected in Quadrants of an Actual Video"
+      ]
+    }
+  ]
+}

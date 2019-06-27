@@ -1,3 +1,7 @@
+body {
+    overflow: auto;
+}
+
 .projectHeader {
     flex-direction: column;
     align-items: center;
@@ -8,12 +12,23 @@
     font-family: "Titillium Web";
 }
 
+.responsiveGrid {
+    overflow-y: auto;
+
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    /* justify-content: center; */
+}
+
 #projectRow {
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     padding: 0 4px;
+
+    justify-content: space-between;
 }
 
 #projectColumn {
@@ -23,11 +38,12 @@
     padding: 0 4px;
 }
 
-@media only screen and (min-width: 1025px) {
+@media only screen and (min-width: 1024px) {
     #projectColumn {
-        -ms-flex: 24%;
-        flex: 24%;
-        max-width: 24%;
-        padding: 0 4px;
+        -ms-flex: 30%;
+        flex: 30%;
+        max-width: 30%;
+        /* padding: 0 4px; */
+        padding-bottom: 2%;
     }
 }
