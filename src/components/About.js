@@ -9,18 +9,18 @@ const about = (props) => {
       <h6 style={{margin:"0", marginBottom:"3%", fontFamily:"Titillium Web"}}>Web Development | Machine Learning | Data Science</h6>
       <h6 style={{fontWeight:"normal", margin:"0", marginBottom:"10%", fontFamily:"Titillium Web"}}>
         <span>
-          <a className={classes.socialLink} href="https://www.linkedin.com/in/pat-hansen/">
-            <i class="fa fa-linkedin-square"></i> LinkedIn
+          <a target="_blank" rel="noreferrer noopener" className={classes.socialLink} href="https://www.linkedin.com/in/pat-hansen/" >
+            <i className="fab fa-linkedin"></i> LinkedIn
           </a>
         </span>
         <span>
-          <a className={classes.socialLink} href="https://github.com/pathansen">
-            <span style={{color:"white"}}>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span> <i class="fa fa-github-square"></i> GitHub
+          <a target="_blank" rel="noreferrer noopener" className={classes.socialLink} href="https://github.com/pathansen">
+            <span style={{color:"white"}}>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span> <i className="fab fa-github-square"></i> GitHub
           </a>
         </span>
         <span>
-          <a className={classes.socialLink} href="https://gitlab.com/pathansen">
-          <span style={{color:"white"}}>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span> <i class="fa fa-gitlab"></i> GitLab
+          <a target="_blank" rel="noreferrer noopener" className={classes.socialLink} href="https://gitlab.com/pathansen">
+          <span style={{color:"white"}}>&nbsp;&nbsp;&bull;&nbsp;&nbsp;</span> <i className="fab fa-gitlab"></i> GitLab
           </a>
         </span>
       </h6>
